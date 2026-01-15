@@ -54,7 +54,7 @@ const CartManager = (function () {
         price: Number(item.price) || 0,
         volume: item.volume,
         qty: item.qty || 1,
-        image: item.image || 'assets/bottle.svg'
+        image: item.image || 'image/shopping-cart.svg'
       });
       // Notification on add-to-cart intentionally removed per UX request
     }

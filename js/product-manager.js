@@ -8,7 +8,7 @@ const ProductManager = (function () {
   'use strict';
 
   let productsCache = null;
-  const API_BASE = 'https://backend-nehad-production.up.railway.app/api';
+  const API_BASE = 'https://backend-nehad-production.up.railway.app';
 
   /**
    * Fetch products from backend API or return cached data
