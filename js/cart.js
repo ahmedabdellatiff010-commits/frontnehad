@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       try {
         // Send order to API
-        const response = await fetch('https://backend-nehad-production.up.railway.app/orders', {
+        const response = await fetch('https://backend-nehad-production.up.railway.app/api/orders', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(orderData)

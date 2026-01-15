@@ -21,7 +21,7 @@ const ProductManager = (function () {
         return productsCache;
       }
 
-      const response = await fetch(`${API_BASE}/products`);
+      const response = await fetch(`${API_BASE}/api/products`);
       if (!response.ok) throw new Error(`API error: ${response.status}`);
       
       const products = await response.json();
@@ -63,7 +63,7 @@ const ProductManager = (function () {
    */
   async function getById(id) {
     try {
-      const response = await fetch(`${API_BASE}/products/${id}`);
+      const response = await fetch(`${API_BASE}/api/products/${id}`);
       if (!response.ok) throw new Error(`Product not found: ${id}`);
       return await response.json();
     } catch (err) {

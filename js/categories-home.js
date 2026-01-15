@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   try {
     // Fetch categories from API
-    const response = await fetch('https://backend-nehad-production.up.railway.app/categories');
+    const response = await fetch('https://backend-nehad-production.up.railway.app/api/categories');
     if (!response.ok) throw new Error('Failed to load categories');
     
     const categories = await response.json();
