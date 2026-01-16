@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       const discount = product.discount || 0;
       const finalPrice = discount > 0 ? Math.round(price * (1 - discount / 100)) : price;
       const defaultVolume = product.defaultVolume || product.volumes?.[0] || '';
-      const imgSrc = product.image ? product.image : 'assets/bottle.svg';
+      const imgSrc = product.image ? product.image : '';
       const offerEndTs = product.offerEnd ? new Date(product.offerEnd).getTime() : '';
 
       return `

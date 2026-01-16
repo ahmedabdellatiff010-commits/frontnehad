@@ -276,6 +276,23 @@ function show(message, type = 'success', duration = 2500) {
     }
   };
 
+  /* ===== Debounce ===== */
+  const Debounce = {
+    /**
+     * Create a debounced function
+     * @param {Function} fn - Function to debounce
+     * @param {number} delay - Delay in ms
+     * @returns {Function} Debounced function
+     */
+    create: function (fn, delay = 300) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => fn.apply(this, args), delay);
+      };
+    }
+  };
+
   /* ===== API Configuration ===== */
   const API = {
     /**

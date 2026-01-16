@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       id: product.id,
       name: product.name,
       price: (typeof DiscountUtils !== 'undefined' && DiscountUtils.getEffectivePrice) ? DiscountUtils.getEffectivePrice(product) : product.price,
-      image: product.image || 'assets/bottle.svg',
+      image: product.image || '',
       category: product.category || ''
     };
     RecentlyViewedManager.addToRecentlyViewed(fullSnapshot);
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     <div class="product-grid">
       <div class="product-visual">
         <div class="pedestal">
-          <img src="${AppUtils.HTML.escape(product.image || 'assets/bottle.svg')}" alt="${AppUtils.HTML.escape(product.name)} زجاجة دواء" loading="lazy">
+          <img src="${AppUtils.HTML.escape(product.image || '')}" alt="${AppUtils.HTML.escape(product.name)} زجاجة دواء" loading="lazy">
         </div>
       </div>
 
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', async function () {
           ? Math.round(price * (1 - discount / 100))
           : price;
         const defaultVolume = (full && (full.defaultVolume || full.volumes?.[0])) || p.defaultVolume || '';
-        const imgSrc = p.image || (full && full.image) || 'assets/bottle.svg';
+        const imgSrc = p.image || (full && full.image) || '';
 
         return `
           <article class="card">

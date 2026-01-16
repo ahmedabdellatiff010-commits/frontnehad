@@ -13,7 +13,7 @@
       <button id="mini-cart-close" class="mini-cart-close" aria-label="إغلاق">×</button>
       <div class="mini-cart-inner">
         <div class="mini-cart-item">
-          <img src="assets/bottle.svg" alt="" class="mini-cart-item-img">
+          <img src="" alt="" class="mini-cart-item-img">
           <div class="mini-cart-item-body">
             <div class="mini-cart-item-name"></div>
             <div class="mini-cart-item-meta"><span class="mini-cart-item-qty"></span> × <span class="mini-cart-item-price"></span></div>
@@ -70,7 +70,7 @@
       const item = detail.item || {};
       const total = detail.total || 0;
 
-      imgEl.src = item.image || 'assets/bottle.svg';
+      imgEl.src = item.image || '';
       imgEl.alt = item.name || '';
       nameEl.textContent = item.name || '';
       qtyEl.textContent = item.qty || 1;
@@ -93,7 +93,7 @@
           const id = btn.dataset.id;
           const item = cart && cart.length ? cart.find(i => i.id === id) : null;
           if (item) {
-            imgEl.src = item.image || 'assets/bottle.svg';
+            imgEl.src = item.image || '';
             imgEl.alt = item.name || '';
             nameEl.textContent = item.name || '';
             qtyEl.textContent = item.qty || 1;

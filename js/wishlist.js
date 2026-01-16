@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const itemsHtml = wishlist.map(item => `
       <article class="wishlist-item">
         <div class="wishlist-item-img">
-          <img src="${AppUtils.HTML.escape(item.image || 'assets/bottle.svg')}" alt="${AppUtils.HTML.escape(item.name)}">
+          <img src="${AppUtils.HTML.escape(item.image || '')}" alt="${AppUtils.HTML.escape(item.name)}">
         </div>
         <div class="wishlist-item-body">
           <h3>${AppUtils.HTML.escape(item.name)}</h3>

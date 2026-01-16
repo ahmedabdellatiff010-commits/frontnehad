@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const itemsHtml = cart.map((item, idx) => `
       <div class="cart-item" data-idx="${idx}">
-        <div class="cart-item-media"><img src="${AppUtils.HTML.escape(item.image || 'assets/bottle.svg')}" alt="${AppUtils.HTML.escape(item.name)}"></div>
+        <div class="cart-item-media"><img src="${AppUtils.HTML.escape(item.image || '')}" alt="${AppUtils.HTML.escape(item.name)}"></div>
         <div class="cart-item-body">
           <h4>${AppUtils.HTML.escape(item.name)} <small class="muted">${AppUtils.HTML.escape(item.volume || '')}</small></h4>
           <div class="cart-item-meta">${AppUtils.HTML.formatPrice(item.price)}</div>

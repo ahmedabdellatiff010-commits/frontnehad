@@ -172,7 +172,7 @@ for (let i = 0; i < pageProducts.length; i += ITEMS_PER_ROW) {
           ? Math.round(price * (1 - discount / 100))
           : price;
         const defaultVolume = product.defaultVolume || product.volumes?.[0] || '';
-        const imgSrc = product.image ? product.image : 'assets/bottle.svg';
+        const imgSrc = product.image ? product.image : '';
 
         return `
           <article class="product-card"

@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
           ? Math.round(price * (1 - discount / 100))
           : price;
         const defaultVolume = (full && (full.defaultVolume || full.volumes?.[0])) || product.defaultVolume || '';
-        const imgSrc = product.image || (full && full.image) || 'assets/bottle.svg';
+        const imgSrc = product.image || (full && full.image) || '';
         const stock = full ? (typeof full.stock === 'number' ? full.stock : parseInt(full.stock, 10) || 0) : 0;
 
         return `

@@ -12,7 +12,7 @@ const RecentlyViewedManager = (() => {
       id: item.id,
       name: item.name,
       price: item.price,
-      image: item.image || 'assets/bottle.svg',
+      image: item.image || '',
       category: item.category || ''
     };
   }
