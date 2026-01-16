@@ -304,9 +304,9 @@ function show(message, type = 'success', duration = 2500) {
      * API endpoints
      */
     ENDPOINTS: {
-      PRODUCTS: '/api/products',
-      CATEGORIES: '/api/categories',
-      ORDERS: '/api/orders'
+      PRODUCTS: '/products',
+      CATEGORIES: '/categories',
+      ORDERS: '/orders'
     },
 
     /**
