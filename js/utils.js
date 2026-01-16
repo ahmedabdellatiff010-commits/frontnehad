@@ -276,20 +276,30 @@ function show(message, type = 'success', duration = 2500) {
     }
   };
 
-  /* ===== Debounce ===== */
-  const Debounce = {
+  /* ===== API Configuration ===== */
+  const API = {
     /**
-     * Create a debounced function
-     * @param {Function} fn - Function to debounce
-     * @param {number} delay - Delay in ms
-     * @returns {Function} Debounced function
+     * Base URL for backend API
      */
-    create: function (fn, delay = 300) {
-      let timeout;
-      return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => fn.apply(this, args), delay);
-      };
+    BASE_URL: 'https://backend-nehad-production.up.railway.app',
+
+    /**
+     * API endpoints
+     */
+    ENDPOINTS: {
+      PRODUCTS: '/api/products',
+      CATEGORIES: '/api/categories',
+      ORDERS: '/api/orders'
+    },
+
+    /**
+     * Get full API URL for endpoint
+     * @param {string} endpoint - API endpoint
+     * @param {string} path - Additional path segments
+     * @returns {string} Full URL
+     */
+    getUrl: function (endpoint, path = '') {
+      return this.BASE_URL + endpoint + (path ? '/' + path : '');
     }
   };
 
@@ -301,6 +311,7 @@ function show(message, type = 'success', duration = 2500) {
     HTML,
     Validation,
     DOM,
-    Debounce
+    Debounce,
+    API
   };
 })();

@@ -8,7 +8,6 @@ const ProductManager = (function () {
   'use strict';
 
   let productsCache = null;
-  const API_BASE = 'https://backend-nehad-production.up.railway.app';
 
   /**
    * Fetch products from backend API or return cached data
@@ -21,7 +20,7 @@ const ProductManager = (function () {
         return productsCache;
       }
 
-      const response = await fetch(`${API_BASE}/api/products`);
+      const response = await fetch(AppUtils.API.getUrl(AppUtils.API.ENDPOINTS.PRODUCTS));
       if (!response.ok) throw new Error(`API error: ${response.status}`);
       
       const products = await response.json();
@@ -63,7 +62,7 @@ const ProductManager = (function () {
    */
   async function getById(id) {
     try {
-      const response = await fetch(`${API_BASE}/api/products/${id}`);
+      const response = await fetch(AppUtils.API.getUrl(AppUtils.API.ENDPOINTS.PRODUCTS, id));
       if (!response.ok) throw new Error(`Product not found: ${id}`);
       return await response.json();
     } catch (err) {

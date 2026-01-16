@@ -47,7 +47,7 @@ console.log('CATEGORY FROM URL:', selectedCategory);
   // Load categories from API and render filter buttons
   async function loadCategories() {
     try {
-      const response = await fetch('https://backend-nehad-production.up.railway.app/api/categories');
+      const response = await fetch(AppUtils.API.getUrl(AppUtils.API.ENDPOINTS.CATEGORIES));
       if (!response.ok) throw new Error('فشل تحميل الفئات');
       allCategories = await response.json();
 
@@ -97,7 +97,7 @@ if (selectedCategory) {
         `).join('');
       }
 
-      AppUtils.DOM.setHTML(categoryFilter, html);AppUtils.DOM.setHTML(categoryFilter, html);
+      AppUtils.DOM.setHTML(categoryFilter, html);
 
 // ✅ دي الإضافة
 if (selectedCategory) {

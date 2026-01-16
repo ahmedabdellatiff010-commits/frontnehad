@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       try {
         // Send order to API
-        const response = await fetch('https://backend-nehad-production.up.railway.app/api/orders', {
+        const response = await fetch(AppUtils.API.getUrl(AppUtils.API.ENDPOINTS.ORDERS), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(orderData)
@@ -360,6 +360,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   renderCount();
-  renderCartPage();
-  renderCheckout();
+  
+  // Only render cart page if cart root exists
+  if (AppUtils.DOM.query('#cart-root')) {
+    renderCartPage();
+  }
+  
+  // Only render checkout if checkout root exists
+  if (AppUtils.DOM.query('#checkout-root')) {
+    renderCheckout();
+  }
 });
